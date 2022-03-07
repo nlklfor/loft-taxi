@@ -2,14 +2,6 @@
 import React from 'react';
 
 
-
-
-// const pages = {
-//     map: <Map />,
-//     profile: <Profile />,
-//     regform: <RegForm />
-//    }
-
 class LogForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
@@ -20,10 +12,7 @@ class LogForm extends React.Component {
         return(login , password);
 
     };
-    // state = {pageContent: ""};
-    // generatePage = (page) => {
-    //     this.setState({pageContent : page});
-    //   };
+    
     render(){
         return(
             <>
@@ -39,13 +28,8 @@ class LogForm extends React.Component {
                         <button> 
                             Зарегестрируйтесь
                         </button>
-                        <button type = "submit">Войти</button>
+                        <button type = "submit" onClick = {() =>{ this.props.generatePage("map")} }>Войти</button>
                 </form>
-                {/* <main>
-                    <section>
-                        {pages[this.state.pageContent]}
-                    </section>
-                </main> */}
             </>
         );
     }

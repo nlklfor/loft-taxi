@@ -3,10 +3,7 @@ import React from 'react';
 
 
 
-// const pages = {
-//     logform: <LogForm />,
-//     map: <Map />
-//    }
+
 
 class RegForm extends React.Component {
     handleSubmit = event => {
@@ -20,10 +17,7 @@ class RegForm extends React.Component {
         return(login , password , name ,surname);
 
     };
-    // state = {pageContent: "logform"};
-    // generatePage = (page) => {
-    //     this.setState({pageContent : page});
-    //   };
+   
     render(){
         return(
             <>
@@ -44,13 +38,9 @@ class RegForm extends React.Component {
                             Пароль:
                             <input name = "password" type = "password" id = "password"></input>
                         </label>
-                        <button type = "submit">Зарегестрироваться</button>
+                        <button type = "submit" onClick = {() =>{ this.props.generatePage("map")} }>Зарегестрироваться</button>
                 </form>
-                {/* <main>
-                    <section>
-                        {pages[this.state.pageContent]}
-                    </section>
-                </main> */}
+                
             </>
         );
     }

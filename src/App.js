@@ -7,20 +7,23 @@ import Map from './Map';
 import RegForm from './RegForm';
 
   const Pages = {
-     map: <Map />,
-     profile: <Profile />,
-     logform: <LogForm />,
-     regform: <RegForm />
+     map: Map ,
+     profile: Profile ,
+     logform: LogForm ,
+     regform: RegForm 
     }
 
 class App extends React.Component {
 
-    state = { pageContent: "logform"};
+    state = { page: "logform"};
 
     generatePage = (page) => {
-      this.setState({pageContent : page});
+      this.setState({page});
     };
   render(){
+    const {page} = this.state;
+    const Page = Pages[page];
+
     return(
       <>
         <header className = "header">
@@ -43,7 +46,7 @@ class App extends React.Component {
         </header>
         <main>
           <section>
-            {Pages[this.state.pageContent]}
+            <Page generatePage = {this.generatePage} />
           </section>
         </main>
       </>
