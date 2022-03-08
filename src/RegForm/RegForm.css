@@ -1,0 +1,51 @@
+.section__register{
+    background: url(../img/map.png) 100% no-repeat;
+    background-size:cover;
+    height: 100vh;
+    display: flex;
+}
+.reg__form{
+    display: flex;
+    flex-direction: column;
+    width: 580px;
+    align-items:center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: auto;
+}
+.btn__register{
+    background: #FDBF5A;
+    border-radius: 70px;
+    border: none;
+    width: 350px;
+    padding: 16px 60px;
+    font-weight: normal;
+    font-size: 25px;
+    color: #000000;
+    transition: .2s all;
+}
+.btn__register:hover ,.btn__register:focus ,.btn__register:active {
+    background: #ffaa20;
+}
+.name{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+}
+#name{
+    margin-bottom: 25px;
+}
+.is__reg{
+    display: flex;
+}
+.lnk__log{
+    margin-left: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #ffaa20;
+    cursor: pointer;
+}

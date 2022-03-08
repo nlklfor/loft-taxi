@@ -1,10 +1,10 @@
 
 import './App.css';
 import React from 'react';
-import LogForm from './LogForm';
+import LogForm from './LogForm/LogForm.jsx';
 import Profile from './Profile';
 import Map from './Map';
-import RegForm from './RegForm';
+import RegForm from './RegForm/RegForm.jsx';
 
   const Pages = {
      map: Map ,
@@ -29,16 +29,16 @@ class App extends React.Component {
         <header className = "header">
           <nav className = "header__nav">
             <ul className = "header__nav-list">
-              <li>
+              <li сlassName = "nav__item-log">
                 <button onClick = {() =>{ this.generatePage("logform")} }>LogForm</button>
               </li>
-              <li>
+              <li сlassName = "nav__item-map">
                 <button onClick = {() =>{ this.generatePage("map")} }>Map</button>
               </li>
-              <li>
+              <li сlassName = "nav__item-profile">
                 <button onClick = {() =>{ this.generatePage("profile")} }>Profile</button>
               </li>
-              <li>
+              <li сlassName = "nav__item-reg">
                 <button onClick = {() =>{ this.generatePage("regform")} }>RegForm</button>
               </li>
             </ul>

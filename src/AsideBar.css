@@ -1,0 +1,10 @@
+aside{
+    background: #1C1A19;
+    width: 34vw;
+    display: flex;
+    justify-content: center;
+}
+svg{
+    margin: auto;
+}
+
