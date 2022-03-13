@@ -1,16 +1,19 @@
 
 import './App.css';
 import React from 'react';
-import LogForm from './LogForm/LogForm.jsx';
-import Profile from './Profile';
+import {LogWithLog} from './LogForm/LogForm.jsx';
+import {ProfileWithLog} from './Profile';
 import Map from './Map';
 import RegForm from './RegForm/RegForm.jsx';
+import Header from './Header/Header';
+import { withLog } from './Context';
 
   const Pages = {
-     map: Map ,
-     profile: Profile ,
-     logform: LogForm ,
-     regform: RegForm 
+     map: (props) => < Map {...props}/> ,
+     profile: (props) => <ProfileWithLog {...props}/> ,
+     logform: (props) => <LogWithLog {...props}/> ,
+     regform: (props) => <RegForm{...props} />,
+     header: (props) => <Header{...props} />
     }
 
 class App extends React.Component {
@@ -18,7 +21,11 @@ class App extends React.Component {
     state = { page: "logform"};
 
     generatePage = (page) => {
-      this.setState({page});
+      if (this.props.isLoggedIn){
+        this.setState({page});
+      } else {
+        this.setState({ page :"logform"});
+      }
     };
   render(){
     const {page} = this.state;
@@ -26,32 +33,12 @@ class App extends React.Component {
 
     return(
       <>
-        <header className = "header">
-          <nav className = "header__nav">
-            <ul className = "header__nav-list">
-              <li сlassName = "nav__item-log">
-                <button onClick = {() =>{ this.generatePage("logform")} }>LogForm</button>
-              </li>
-              <li сlassName = "nav__item-map">
-                <button onClick = {() =>{ this.generatePage("map")} }>Map</button>
-              </li>
-              <li сlassName = "nav__item-profile">
-                <button onClick = {() =>{ this.generatePage("profile")} }>Profile</button>
-              </li>
-              <li сlassName = "nav__item-reg">
-                <button onClick = {() =>{ this.generatePage("regform")} }>RegForm</button>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>
-          <section>
-            <Page generatePage = {this.generatePage} />
-          </section>
-        </main>
+        <div>
+            <Page generatePage = {this.generatePage}/>  
+        </div>
       </>
     );
   }
 }
 
-export default App;
+export default withLog(App);

@@ -1,6 +1,20 @@
 import React from "react";
+import Header from "./Header/Header";
+import { withLog } from "./Context";
 
-const Profile = () => {
-    return <h1 className = "Profile">Profile</h1>
+export class Profile extends React.Component{
+    handleUnsubmit = () =>{
+        this.props.logOut();
+        this.props.generatePage("logform");
+    }
+    render(){
+        return(
+            <section>
+                <Header generatePage = {this.props.generatePage} />
+                <h1 className = "Profile">Profile <button onClick={this.handleUnsubmit}>Выйти</button></h1>
+            </section>
+        ); 
+    }
 }
-export default Profile;
+
+export const ProfileWithLog = withLog(Profile);
