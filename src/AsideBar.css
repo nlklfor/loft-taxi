@@ -4,7 +4,7 @@ aside{
     display: flex;
     justify-content: center;
 }
-svg{
+.logo-aside{
     margin: auto;
 }
 

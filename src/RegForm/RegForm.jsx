@@ -6,6 +6,7 @@ import "./RegForm.css"
 
 
 
+
 class RegForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
@@ -51,5 +52,11 @@ class RegForm extends React.Component {
         );
     }
 }
+
+// class PropTypeReg extends React.Component{
+//     render(){
+//         return <RegForm />;
+//     }
+// }
     
 export default RegForm;

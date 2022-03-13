@@ -1,24 +1,35 @@
 import './LogForm.css'
 import React from 'react';
 import AsideBar from '../AsideBar'
+import { withLog } from '../Context';
 
 
 class LogForm extends React.Component {
-    handleSubmit = event => {
+    goToProfile = () => {
+        this.props.generatePage("profile")
+    }
+
+
+
+    handleSubmit = (event) => {
         event.preventDefault();
 
-        const login = event.target.login.value;
-        const password = event.target.password.value;
-
-        return(login , password);
+        const {email , password} = event.target
+        this.props.logIn(email.value , password.value)
+        
 
     };
-    
     render(){
         return(
             <>
-                
-                <section className='section__login'> 
+                {
+                    this.props.isLoggedIn ? (
+                        <h1>
+                            Вы успешно вошли <button onClick = {this.goToProfile}>Go to profile</button>
+                        </h1>
+                        
+                    ) : (
+                        <section className='section__login'> 
                 <AsideBar />
                     <form onSubmit = {this.handleSubmit} className = "log__form" >
                         <h1 className='form__topic'>Войти</h1>
@@ -39,9 +50,11 @@ class LogForm extends React.Component {
                             </div> 
                     </form>
                 </section>
+                    )
+                }
             </>
         );
     }
 }
-    
-export default LogForm;
+
+export const LogWithLog = withLog(LogForm);
