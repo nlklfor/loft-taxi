@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import './Map.css';
 import Header from './Header/Header';
-import PropTypes from "prop-types";
+
 
 
 
@@ -46,9 +46,4 @@ const Map = (props) => {
     </>
   );
 };
-class PropTypeMap extends React.Component{
-  render({props}){
-      return <Map />;
-  }
-}
 export default Map;
