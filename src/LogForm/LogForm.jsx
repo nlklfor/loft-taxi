@@ -25,7 +25,7 @@ class LogForm extends React.Component {
                 {
                     this.props.isLoggedIn ? (
                         <h1>
-                            Вы успешно вошли <button onClick = {this.goToProfile}>Go to profile</button>
+                            Вы успешно вошли в аккаунт <button onClick = {this.goToProfile}>Go to profile</button>
                         </h1>
                         
                     ) : (
