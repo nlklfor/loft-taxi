@@ -5,13 +5,17 @@ import App from './App';
 import { theme } from "loft-taxi-mui-theme"; // Импортируем саму тему
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import reportWebVitals from './reportWebVitals';
-import { LogProvider } from './Context';
+import {Provider} from 'react-redux';
+import {BrowserRouter} from 'react-router-dom';
+import {store} from './store'
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
-    <LogProvider>
-      <App />
-    </LogProvider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </MuiThemeProvider>,
   document.getElementById("root")
 );

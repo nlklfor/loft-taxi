@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "./Header/Header";
-import { withLog } from "./Context";
+import {connect} from 'react-redux';
+import {logOut} from './actions';
 
 export class Profile extends React.Component{
     handleUnsubmit = () =>{
         this.props.logOut();
-        this.props.generatePage("logform");
+        // this.props.generatePage("logform");
     }
     render(){
         return(
@@ -17,4 +18,7 @@ export class Profile extends React.Component{
     }
 }
 
-export const ProfileWithLog = withLog(Profile);
+export const ProfileWithLog = connect(
+    null,
+    {logOut}
+)(Profile);

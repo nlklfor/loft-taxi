@@ -1,13 +1,15 @@
 import './LogForm.css'
 import React from 'react';
 import AsideBar from '../AsideBar'
-import { withLog } from '../Context';
+import {connect} from 'react-redux';
+import {authenticate} from '../actions'
+import {Link} from 'react-router-dom'
 
 
 class LogForm extends React.Component {
-    goToProfile = () => {
-        this.props.generatePage("profile")
-    }
+    // goToProfile = () => {
+    //     this.props.generatePage("profile")
+    // }
 
 
 
@@ -15,7 +17,7 @@ class LogForm extends React.Component {
         event.preventDefault();
 
         const {email , password} = event.target
-        this.props.logIn(email.value , password.value)
+        this.props.authenticate(email.value , password.value)
         
 
     };
@@ -25,7 +27,7 @@ class LogForm extends React.Component {
                 {
                     this.props.isLoggedIn ? (
                         <h1>
-                            Вы успешно вошли в аккаунт <button onClick = {this.goToProfile}>Go to profile</button>
+                            Вы успешно вошли в аккаунт <Link to='/profile'>Go to profile</Link>
                         </h1>
                         
                     ) : (
@@ -57,4 +59,7 @@ class LogForm extends React.Component {
     }
 }
 
-export const LogWithLog = withLog(LogForm);
+export const LogWithLog = connect(
+    (state) => ({isLoggedIn: state.log.isLoggedIn}),
+    {authenticate}
+)(LogForm);

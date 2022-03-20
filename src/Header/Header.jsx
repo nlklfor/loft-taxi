@@ -28,16 +28,16 @@ class Header extends React.Component{
                     <div className="header__list">
                         <ul className = "header__nav-list">
                             <li className = 'nav__list-item' onClick = {() =>{ this.props.generatePage("map")} }>
-                                Карта
+                                <Link to='/map'>Map</Link>
                             </li>
                             <li className = 'nav__list-item' onClick = {() =>{ this.props.generatePage("profile")} }>
-                                Профиль
+                                <Link to='/profile'>Profile</Link>
                             </li>
                             <li className = 'nav__list-item' onClick = {() =>{ this.props.generatePage("logform")} }>
-                                Войти
+                                <Link to='/login'>LogIn</Link>
                             </li>
                             <li className = 'nav__list-item' onClick = {() =>{ this.props.generatePage("regform")} }>
-                                Зарегестрироваться
+                                <Link to='/registration'>RegIn</Link>
                             </li>
                         </ul>
                     </div>
