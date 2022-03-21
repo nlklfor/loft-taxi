@@ -2,49 +2,36 @@
 import './App.css';
 import React from 'react';
 import {LogWithLog} from './LogForm/LogForm.jsx';
-import {Profile, ProfileWithLog} from './Profile';
+import {Profile, ProfileWithLog} from './Profile/Profile';
 import Map from './Map';
 import RegForm from './RegForm/RegForm.jsx';
-import Header from './Header/Header';
-import { Private } from './Private';
-import {connect} from 'react-redux';
-import { Link, Switch, Route } from 'react-router';
+import {connect , useSelector} from 'react-redux';
+import {Routes, Route, Navigate} from 'react-router-dom';
+// import {ProfileModal} from './Modal';
 
 
 
-  // const Pages = {
-  //    map: (props) => < Map {...props}/> ,
-  //    profile: (props) => <ProfileWithLog {...props}/> ,
-  //    logform: (props) => <LogWithLog {...props}/> ,
-  //    regform: (props) => <RegForm{...props} />,
-  //    header: (props) => <Header{...props} />
-  //   }
+const ProtectedPage = ({component}) => {
+  const isLoggedIn = useSelector(state => state.log.isLoggedIn)
+  
+  return isLoggedIn ? component : <Navigate to='/' />
+}
 
 class App extends React.Component {
-
-    // state = { page: "logform"};
-
-    // generatePage = (page) => {
-    //   if (this.props.isLoggedIn){
-    //     this.setState({page});
-    //   } else {
-    //     this.setState({ page :"logform"});
-    //   }
-    // };
+  
   render(){
-    // const {page} = this.state;
-    // const Page = Pages[page];
-
+    
+    
     return(
       <>
         <div>
-          <Switch>
-            <Route exact path='/' component={LogWithLog} />
-            <Private path='/map' component={Map} />
-            <Private path='/profile' component={Profile} />
-            <Route exact path='/registrarion' component={RegForm} />
-          </Switch>
-            <Page generatePage = {this.generatePage}/>  
+          <Routes>
+            <Route exact path='/' element = {<LogWithLog/>} />
+            <Route path='/map' element ={<ProtectedPage component={<Map/>}/>}/>
+            <Route path='/profile' element ={<ProtectedPage component={<ProfileWithLog/>}/>}/>
+            <Route exact path='/registration' element = {<RegForm/>} />
+            <Route path='*' element = {<Navigate to='/map'/>} />
+          </Routes>
         </div>
       </>
     );

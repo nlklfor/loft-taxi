@@ -1,14 +1,14 @@
 import React from "react";
-import { Route, Redirect } from "react-router";
+import { Route, Navigate } from 'react-router-dom';
 import { connect } from "react-redux";
 
 export const Private = connect((state) => ({
-    isLoggedIn: state.log.isLoggedIn}))
+    isLoggedIn: state.log.isLoggedIn,}))
     (({component: Component, isLoggedIn, ...rest}) => (
         <Route
             {...rest}
             render={(props) => 
-                isLoggedIn ? <Component {...props} /> : <Redirect to="/" />
+                isLoggedIn ? <Component {...props} /> : <Navigate to="/" />
             }
         />
     ));

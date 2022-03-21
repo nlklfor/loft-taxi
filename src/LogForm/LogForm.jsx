@@ -3,7 +3,8 @@ import React from 'react';
 import AsideBar from '../AsideBar'
 import {connect} from 'react-redux';
 import {authenticate} from '../actions'
-import {Link} from 'react-router-dom'
+import Map from '../Map';
+// import {Link} from 'react-router-dom'
 
 
 class LogForm extends React.Component {
@@ -26,9 +27,7 @@ class LogForm extends React.Component {
             <>
                 {
                     this.props.isLoggedIn ? (
-                        <h1>
-                            Вы успешно вошли в аккаунт <Link to='/profile'>Go to profile</Link>
-                        </h1>
+                        <Map />
                         
                     ) : (
                         <section className='section__login'> 

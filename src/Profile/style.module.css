@@ -1,0 +1,20 @@
+.modal__background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgba(rgb(0, 0, 0), rgb(0, rgb(0, 0, 0)), rgb(0, 0, 0), 0.3);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__card{
+    background: white;
+    padding: 25px;
+    border: 3px solid black;
+    border-radius: 5px;
+}

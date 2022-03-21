@@ -35,3 +35,15 @@
 .nav__list-item:hover{
     color: #FDBF5A;
 }
+
+a{
+    cursor: pointer;
+    color: white;
+    font-size: 21px;
+    transition: .2s all;
+    padding-left: 20px;
+    text-decoration: none;
+}
+a:hover , a:focus , a:active {
+    color: #FDBF5A;
+}

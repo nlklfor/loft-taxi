@@ -1,7 +1,10 @@
 import React from "react";
-import Header from "./Header/Header";
+import Header from "../Header/Header";
 import {connect} from 'react-redux';
-import {logOut} from './actions';
+import {logOut} from '../actions';
+
+
+
 
 export class Profile extends React.Component{
     handleUnsubmit = () =>{
@@ -10,9 +13,10 @@ export class Profile extends React.Component{
     }
     render(){
         return(
-            <section>
-                <Header generatePage = {this.props.generatePage} />
-                <h1 className = "Profile">Profile <button onClick={this.handleUnsubmit}>Выйти</button></h1>
+            <section className="profile__modal">
+                <div className="modal__card">
+                    TOHA?
+                </div> 
             </section>
         ); 
     }

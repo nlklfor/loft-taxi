@@ -1,5 +1,6 @@
 import './Header.css';
 import React from "react";
+import {Link} from 'react-router-dom'
 
 
 
@@ -27,17 +28,17 @@ class Header extends React.Component{
                     </svg>
                     <div className="header__list">
                         <ul className = "header__nav-list">
-                            <li className = 'nav__list-item' onClick = {() =>{ this.props.generatePage("map")} }>
+                            <li className = 'nav__list-item'>
                                 <Link to='/map'>Map</Link>
                             </li>
-                            <li className = 'nav__list-item' onClick = {() =>{ this.props.generatePage("profile")} }>
+                            <li className = 'nav__list-item'>
                                 <Link to='/profile'>Profile</Link>
                             </li>
-                            <li className = 'nav__list-item' onClick = {() =>{ this.props.generatePage("logform")} }>
-                                <Link to='/login'>LogIn</Link>
+                            <li className = 'nav__list-item'>
+                                <Link to='/login'>Login</Link>
                             </li>
-                            <li className = 'nav__list-item' onClick = {() =>{ this.props.generatePage("regform")} }>
-                                <Link to='/registration'>RegIn</Link>
+                            <li className = 'nav__list-item'>
+                                <Link to='/registration'>Registration</Link>
                             </li>
                         </ul>
                     </div>

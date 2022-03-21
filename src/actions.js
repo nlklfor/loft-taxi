@@ -4,7 +4,7 @@ export const AUTHENTICATE = "AUTHENTICATE"
 
 export const logIn = () => ({type: LOG_IN})
 export const logOut = () => ({type: LOG_OUT})
-export const authenticate = () => ({
+export const authenticate = (email , password) => ({
     type: AUTHENTICATE,
      payload:{email , password}
     });
