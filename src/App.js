@@ -2,12 +2,12 @@
 import './App.css';
 import React from 'react';
 import {LogWithLog} from './LogForm/LogForm.jsx';
-import {Profile, ProfileWithLog} from './Profile/Profile';
+import {ProfileWithLog} from './Profile/Profile';
 import Map from './Map';
 import RegForm from './RegForm/RegForm.jsx';
 import {connect , useSelector} from 'react-redux';
 import {Routes, Route, Navigate} from 'react-router-dom';
-// import {ProfileModal} from './Modal';
+
 
 
 

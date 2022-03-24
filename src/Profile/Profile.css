@@ -1,0 +1,113 @@
+.card__profile{
+    display: flex;
+    flex-direction: column;
+    width: 880px;
+    align-items:center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin:auto;
+    margin-top: 100px;
+}
+.card__info{
+    display: flex;
+    flex-direction: row;
+}
+.card__title{
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+}
+.card__subtitle{
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    color: #7B7B7B;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.card__image{
+    width: 350px;
+    height: 180px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-left: 30px;
+}
+.name{
+    
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+}
+.card__number{
+    
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+}
+.password{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+}
+.private__data{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#cvc{
+    width: 140px;
+
+}
+#mmyy{
+    width: 140px;
+    margin-right: 70px;
+}
+
+.btn__save{
+    background: #FDBF5A;
+    border-radius: 70px;
+    border: none;
+    padding: 16px 140px;
+    font-weight: normal;
+    font-size: 25px;
+    color: #000000;
+    transition: .2s all;
+    margin-top: 60px;
+    margin-bottom: 70px;
+}
+
+.btn__save:hover,.btn__save:focus,.btn__save:active  {
+    background: #ffaa20;
+}
+.card__header-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#mmyy__info{
+    width: 50px;
+    border-bottom: none;
+}
+#cardnumber__info{
+    text-align: center;
+    border-bottom: none;
+}
+#loft{
+    margin-top: 15px;
+    margin-left: 15px;
+}
+#sim{
+    margin-top: 20px;
+    margin-left: 10px;
+}

@@ -4,13 +4,11 @@ import AsideBar from '../AsideBar'
 import {connect} from 'react-redux';
 import {authenticate} from '../actions'
 import Map from '../Map';
-// import {Link} from 'react-router-dom'
+
 
 
 class LogForm extends React.Component {
-    // goToProfile = () => {
-    //     this.props.generatePage("profile")
-    // }
+    
 
 
 

@@ -47,6 +47,22 @@
     font-size: 16px;
     color: #000000;
 }
+.cvc{
+    
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+}
+.mmyy{
+    
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+}
 input{
     font-size: 18px;
     width: 350px;
