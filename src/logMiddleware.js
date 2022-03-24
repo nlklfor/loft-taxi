@@ -5,9 +5,9 @@ import { AUTHENTICATE } from './actions';
 export const logMiddleware = (store) => (next) => async (action) => {
     if(action.type === AUTHENTICATE){
         const {email, password} = action.payload;
-        const success = await serverLogin(email, password)
-        if(success){
-            store.dispatch(logIn(success.token))
+        const result = await serverLogin(action.payload)
+        if(result.success){
+            store.dispatch(logIn(result.token))
         }
         
     }else {
