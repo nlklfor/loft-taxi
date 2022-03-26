@@ -36,14 +36,14 @@
     color: #FDBF5A;
 }
 
-a{
+#header__item{
     cursor: pointer;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 21px;
     transition: .2s all;
     padding-left: 20px;
     text-decoration: none;
 }
-a:hover , a:focus , a:active {
+#header__item:hover , #header__item:focus , #header__item:active {
     color: #FDBF5A;
 }

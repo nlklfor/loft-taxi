@@ -29,16 +29,16 @@ class Header extends React.Component{
                     <div className="header__list">
                         <ul className = "header__nav-list">
                             <li className = 'nav__list-item'>
-                                <Link to='/map'>Map</Link>
+                                <Link to='/map' id = "header__item">Map</Link>
                             </li>
                             <li className = 'nav__list-item'>
-                                <Link to='/profile'>Profile</Link>
+                                <Link to='/profile' id = "header__item">Profile</Link>
                             </li>
                             <li className = 'nav__list-item'>
-                                <Link to='/login'>Login</Link>
+                                <Link to='/login' id = "header__item">Login</Link>
                             </li>
                             <li className = 'nav__list-item'>
-                                <Link to='/registration'>Registration</Link>
+                                <Link to='/registration' id = "header__item">Registration</Link>
                             </li>
                         </ul>
                     </div>

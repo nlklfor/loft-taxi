@@ -4,6 +4,7 @@ import AsideBar from '../AsideBar'
 import {connect} from 'react-redux';
 import {authenticate} from '../actions'
 import Map from '../Map';
+import {Routes, Route, Navigate, Link} from 'react-router-dom';
 
 
 
@@ -40,12 +41,12 @@ class LogForm extends React.Component {
                                 Password*
                                 <input name = "password" type = "password" id = "password" placeholder='*******'></input>
                             </label>
-                            <button type = "submit" onClick = {() =>{ this.props.generatePage("map")} } className = "btn__enter">Войти</button>
+                            <Link to='/map' id = "button__log"><button type = "submit" className = "btn__enter">Войти</button></Link>
                             <div className='new__user'>
                                 <p className='user__qstn'>Новый пользователь?</p>
-                                <p className='lnk__register' onClick = {() =>{ this.props.generatePage("regform")} }> 
-                                    Зарегестрируйтесь
-                                </p>
+                                    <p className='lnk__register'> 
+                                        <Link to='/registration' id = "reg__link">Зарегестрируйтесь</Link>
+                                    </p>
                             </div> 
                     </form>
                 </section>

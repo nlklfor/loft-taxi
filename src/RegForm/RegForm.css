@@ -49,3 +49,12 @@
     color: #ffaa20;
     cursor: pointer;
 }
+#log__link{
+    margin-left: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #ffaa20;
+    cursor: pointer;
+    text-decoration: none;
+}

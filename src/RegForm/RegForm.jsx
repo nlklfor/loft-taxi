@@ -1,6 +1,7 @@
 import React from 'react';
 import AsideBar from '../AsideBar'
 import "./RegForm.css"
+import {Link} from "react-router-dom"
 
 
 
@@ -39,11 +40,11 @@ class RegForm extends React.Component {
                             Пароль*
                             <input name = "password" type = "password" id = "password" placeholder='*******'></input>
                         </label>
-                        <button type = "submit" onClick = {() =>{ this.props.generatePage("map")} } className = 'btn__register'>Зарегестрироваться</button>
+                        <button type = "submit" className = 'btn__register'>Зарегестрироваться</button>
                         <div className='is__reg'>
                                 <p className='user__qstn'>Уже зарегестрированы?</p>
-                                <p className='lnk__log' onClick = {() =>{ this.props.generatePage("logform")} }> 
-                                    Войти
+                                <p className='lnk__log'> 
+                                    <Link to='/' id = "log__link">Войти</Link>
                                 </p>
                             </div>
                     </form>

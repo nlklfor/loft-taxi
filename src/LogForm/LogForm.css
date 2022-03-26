@@ -105,3 +105,13 @@ input:hover{
     color: #828282;
     padding-bottom: 50px;
 }
+
+#reg__link{
+    margin-left: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #ffaa20;
+    cursor: pointer;
+    text-decoration: none;
+}
