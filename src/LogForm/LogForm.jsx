@@ -3,8 +3,7 @@ import React from 'react';
 import AsideBar from '../AsideBar'
 import {connect} from 'react-redux';
 import {authenticate} from '../actions'
-import Map from '../Map';
-import {Routes, Route, Navigate, Link} from 'react-router-dom';
+import {Route, Navigate, Link} from 'react-router-dom';
 
 
 
@@ -26,7 +25,7 @@ class LogForm extends React.Component {
             <>
                 {
                     this.props.isLoggedIn ? (
-                        <Map />
+                        <Navigate to='/map'/>
                         
                     ) : (
                         <section className='section__login'> 
@@ -41,7 +40,7 @@ class LogForm extends React.Component {
                                 Password*
                                 <input name = "password" type = "password" id = "password" placeholder='*******'></input>
                             </label>
-                            <Link to='/map' id = "button__log"><button type = "submit" className = "btn__enter">Войти</button></Link>
+                            <Link to='/map' id = "button__log">Войти</Link>
                             <div className='new__user'>
                                 <p className='user__qstn'>Новый пользователь?</p>
                                     <p className='lnk__register'> 
