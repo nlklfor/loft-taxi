@@ -3,22 +3,32 @@ import Header from "../Header/Header";
 import {connect} from 'react-redux';
 import {logOut} from '../actions';
 import './Profile.css'
-import { addCard } from "../api";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { addCard } from "../actions";
+
+
+
 
 
 
 
 export class Profile extends React.Component{
-    // handleUnsubmit = () =>{
-    //     this.props.logOut();
-    //     // this.props.generatePage("logform");
-    // }
+    addCard = (event) => {
+        event.preventDefault()
+        const {cardName, cardNumber, expiryDate, cvc} = event.target;
+        this.props.addCard(cardName.value, cardNumber.value, expiryDate.value , cvc.value)
+    }
+        
     render(){
+        console.log(this.props.card)
         return(
-           
-            <section className="profile">
-                <Header />
-                <form onSubmit={this.addCard}>
+            
+            <>
+            <Header />
+            {!this.props.cardAdded ? (
+                <section className="profile">
+                
                     <div className="card__profile">
                         <div className="card__header">
                             <h1 className="card__title">
@@ -26,6 +36,7 @@ export class Profile extends React.Component{
                             </h1>
                             <p className="card__subtitle">Введите платежные данные</p>
                         </div>
+                        <form onSubmit={this.addCard}>
                             <div className="card__info">
                                 <div className="card__data">
                                     <label className='name'>
@@ -82,16 +93,32 @@ export class Profile extends React.Component{
                                         </svg>
                                     </div>
                                 </div>
+                                
                             </div>
+                        </form>   
+                         
                             <button type = "submit" className = 'btn__save'>Сохранить</button>
                     </div>
-                </form>
+               
             </section>
+            ):(
+                <div>
+                  <h4 className="card__success-title">Профиль</h4>
+                  <p className="card__success-desc">Платежные данные обновлены. Теперь вы можете сделать заказ</p> 
+                  <Link to="/map"><button>Перейти на карту</button></Link> 
+                </div>
+            )}
+            </>
+           
         ); 
     }
 }
+Profile.propTypes = {
+    addCard: PropTypes.func,
+    cardAdded: PropTypes.bool,
+};
 
 export const ProfileWithLog = connect(
-    null,
-    {logOut}
+    state => ({card: state.card, cardAdded:state.card.cardAdded}),
+    { addCard }
 )(Profile);

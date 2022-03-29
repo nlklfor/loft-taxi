@@ -3,7 +3,8 @@ import React from 'react';
 import AsideBar from '../AsideBar'
 import {connect} from 'react-redux';
 import {authenticate} from '../actions'
-import {Route, Navigate, Link} from 'react-router-dom';
+
+import {Navigate, Link} from 'react-router-dom';
 
 
 
@@ -40,7 +41,7 @@ class LogForm extends React.Component {
                                 Password*
                                 <input name = "password" type = "password" id = "password" placeholder='*******'></input>
                             </label>
-                            <Link to='/map' id = "button__log">Войти</Link>
+                            <button type = "submit" className = "btn__enter">Войти</button>
                             <div className='new__user'>
                                 <p className='user__qstn'>Новый пользователь?</p>
                                     <p className='lnk__register'> 
