@@ -1,4 +1,4 @@
-import {CARD_TO_STORE} from "./actions"
+import {CARD_TO_STORE} from "../actions"
 
 
 const initialState = {
