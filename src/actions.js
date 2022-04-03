@@ -5,6 +5,10 @@ export const LOG_OUT = "LOG_OUT"
 export const AUTHENTICATE = "AUTHENTICATE"
 export const ADD_CARD = "ADD_CARD"
 export const CARD_TO_STORE = "CARD_TO_STORE"
+export const REMOVE_FLAG = "REMOVE_FLAG"
+export const FETCH_ROUTE = 'FETCH_ROUTE';
+export const SET_ROUTE = 'SET_ROUTE';
+export const DELETE_ROUTE = 'REMOVE_ROUTE';
 
 export const logIn = () => ({type: LOG_IN})
 export const logOut = () => ({type: LOG_OUT})
@@ -18,5 +22,11 @@ export const authenticate = (email , password) => ({
     })
     export const cardToStore = data => ({type: CARD_TO_STORE, payload: data})
 
-    export const fetchListReqauest = createAction("RETCH_LIST_REQUEST")
-    export const fetchListSuccess = createAction("RETCH_LIST_SUCCESS")
+    export const fetchAddressRequest = createAction("RETCH_ADDRESS_REQUEST")
+    export const fetchAddressSuccess = createAction("RETCH_ADDRESS_SUCCESS")
+
+    export const removeFlag = () => ({ type: REMOVE_FLAG })
+    export const fetchRoute = (address_1, address_2) => ({ type: FETCH_ROUTE, payload: { address_1, address_2 },
+    });
+    export const setRoute = (route) => ({ type: SET_ROUTE, payload: { route } });
+    export const deleteRoute = () => ({ type: DELETE_ROUTE });

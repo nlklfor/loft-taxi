@@ -41,20 +41,20 @@ export class Profile extends React.Component{
                                 <div className="card__data">
                                     <label className='name'>
                                             Имя владельца
-                                            <input name = "cardName" type = "cardName" id = "cardName" placeholder='Имя владельца'></input>
+                                            <input htmlFor="cardName" name = "cardName" type = "cardName" id = "cardName" placeholder='Имя владельца'></input>
                                     </label>
                                     <label className='card__number'> 
                                         Номер карты
-                                        <input name = "cardNumber" type = "cardNumber" id = "cardNumber" placeholder="XXXX XXXX XXXX XXXX" pattern="[0-9]{14,23}" ></input>
+                                        <input htmlFor="cardNumber" name = "cardNumber" type = "cardNumber" id = "cardNumber" placeholder="XXXX XXXX XXXX XXXX" pattern="[0-9]{14,23}" ></input>
                                     </label>
                                     <div className="private__data">
                                         <label className='mmyy'>
                                             MM/YY
-                                            <input name = "expiryDate" type = "expiryDate" id = "expiryDate" placeholder='**/**'></input>
+                                            <input htmlFor="expiryDate" name = "expiryDate" type = "expiryDate" id = "expiryDate" placeholder='**/**'></input>
                                         </label>
                                         <label className='cvc'>
                                             CVC
-                                            <input name = "cvc" type = "cvc" id = "cvc" placeholder='***'></input>
+                                            <input htmlFor="cvc" name = "cvc" type = "cvc" id = "cvc" placeholder='***'></input>
                                         </label>
                                     </div>
                                     
@@ -95,17 +95,18 @@ export class Profile extends React.Component{
                                 </div>
                                 
                             </div>
+                            <button type = "submit" className = 'btn__save'>Сохранить</button>
                         </form>   
                          
-                            <button type = "submit" className = 'btn__save'>Сохранить</button>
+                            
                     </div>
                
             </section>
             ):(
-                <div>
+                <div className="card__success">
                   <h4 className="card__success-title">Профиль</h4>
-                  <p className="card__success-desc">Платежные данные обновлены. Теперь вы можете сделать заказ</p> 
-                  <Link to="/map"><button>Перейти на карту</button></Link> 
+                  <p className="card__success-desc">Платежные данные обновлены успешно. Теперь вы можете сделать заказ!</p> 
+                  <Link to="/map"><button className="button__success">Перейти на карту</button></Link> 
                 </div>
             )}
             </>

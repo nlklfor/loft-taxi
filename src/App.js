@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react';
 import {LogWithLog} from './LogForm/LogForm.jsx';
 import {ProfileWithLog} from './Profile/Profile';
-import Map from './Map';
+import Map from "./Map/Map";
 import RegForm from './RegForm/RegForm.jsx';
 import {connect , useSelector} from 'react-redux';
 import {Routes, Route, Navigate} from 'react-router-dom';
