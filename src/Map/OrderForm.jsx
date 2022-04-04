@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Paper, Select, MenuItem, InputLabel, FormControl } from "@material-ui/core";
 import { useEffect } from "react";
-import { fetchAddressRequest, fetchRoute } from "../address/actions";
+import { fetchAddressRequest, fetchRoute } from "../actions";
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import { getAddressList } from "../address/selectors";
@@ -49,7 +49,7 @@ const OrderForm = React.memo(props => {
               <div className="order__wrapper">
                 <FormControl className='formControl'>
                   <InputLabel htmlFor="from">Откуда</InputLabel>
-                  <Select className="order__input" id="address1" placeholder="Откуда"
+                  <Select className="order__input" id="address_1" placeholder="Откуда"
                     value={route.from || ""}
                     name={from}
                     inputProps={{ name: 'from', id: 'from' }}
@@ -65,7 +65,7 @@ const OrderForm = React.memo(props => {
               <div className="order__wrapper">
                 <FormControl className='formControl'>
                   <InputLabel htmlFor="to">Куда</InputLabel>
-                  <Select className="order__input" id="address2" placeholder="Куда"
+                  <Select className="order__input" id="address_2" placeholder="Куда"
                     value={route.to || ""}
                     name={to}
                     inputProps={{ name: 'to', id: 'to' }}
@@ -88,7 +88,7 @@ const OrderForm = React.memo(props => {
       ) : (
         <Paper elevation={4} className="order">
         <div>Ваш заказ успешно сделан. Ожидайте </div>
-        <Button variant="contained" color="primary" type="submit" className="f24">Сделать новый заказ</Button>
+        <Button variant="contained" color="primary" type="submit" className="f24" to="/map">Сделать новый заказ</Button>
         </Paper>
       )}
     </>

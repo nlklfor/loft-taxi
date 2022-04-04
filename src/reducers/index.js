@@ -1,14 +1,14 @@
 import { combineReducers } from "redux";
 import { cardReducer } from "./card";
 import log from './log';
-import { addresses } from "./addresses";
+import { addressList } from "./addressList";
 import route from "./route";
 
 
 export default combineReducers({
     log,
     card: cardReducer,
-    addresses: addresses,
+    addressList: addressList,
     route  
     
 })

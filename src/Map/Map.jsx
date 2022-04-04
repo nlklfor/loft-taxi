@@ -15,7 +15,7 @@ class Map extends Component {
  
 
   componentDidMount() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA';
+    mapboxgl.accessToken = 'pk.eyJ1IjoibmlraWZmZm9yIiwiYSI6ImNsMGpnN3R3NTBhY24zanF0cWE3ZGg5aWYifQ.eYhga-DmSziMUzLOp9AzwQ';
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v9',

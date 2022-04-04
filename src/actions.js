@@ -22,8 +22,8 @@ export const authenticate = (email , password) => ({
     })
     export const cardToStore = data => ({type: CARD_TO_STORE, payload: data})
 
-    export const fetchAddressRequest = createAction("RETCH_ADDRESS_REQUEST")
-    export const fetchAddressSuccess = createAction("RETCH_ADDRESS_SUCCESS")
+    export const fetchAddressRequest = createAction("FETCH_ADDRESS_REQUEST")
+    export const fetchAddressSuccess = createAction("FETCH_ADDRESS_SUCCESS")
 
     export const removeFlag = () => ({ type: REMOVE_FLAG })
     export const fetchRoute = (address_1, address_2) => ({ type: FETCH_ROUTE, payload: { address_1, address_2 },
