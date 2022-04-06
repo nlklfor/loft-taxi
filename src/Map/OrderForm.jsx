@@ -82,26 +82,23 @@ const OrderForm = React.memo(props => {
             <Paper className="order__bottom">
               <div className="order__choice">
                 <button className="button__choice" disabled="disabled">
-                  <Paper className="order__option">
                     <div className="order__name">Стандарт</div>
                     <p className="order__cost">Стоимость</p>
                     <div className="order__price">150 ₽</div>
                     <div id="car_1" className="order__car"><img src="https://www.seekpng.com/png/detail/355-3556484_bmw-2-series-front-view-png-clipart-download.png" alt="" /></div>
-                  </Paper></button>
+                </button>
                 <button className="button__choice" disabled="disabled">
-                  <Paper className="order__option">
                     <div className="order__name">Премиум</div>
                     <p className="order__cost">Стоимость</p>
                     <div className="order__price">250 ₽</div>
                     <div id="car_2" className="order__car"><img src="https://png.pngitem.com/pimgs/s/525-5257950_tesla-model-x-white-back-hd-png-download.png" alt="" /></div>
-                  </Paper></button>
+                </button>
                 <button className="button__choice" disabled="disabled">
-                  <Paper className="order__option">
                     <div className="order__name">Бизнес</div>
                     <p className="order__cost">Стоимость</p>
                     <div className="order__price">300 ₽</div>
                     <div id="car_3" className="order__car"><img src="https://www.pngitem.com/pimgs/m/126-1268281_mercedes-car-png-fromt-view-of-mercedes-car.png" alt="" /></div>
-                  </Paper></button>
+                </button>
               </div>
               <button variant="contained" color="primary" type="submit" className="make__order">Заказать</button>
             </Paper>
