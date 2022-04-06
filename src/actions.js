@@ -26,7 +26,7 @@ export const authenticate = (email , password) => ({
     export const fetchAddressSuccess = createAction("FETCH_ADDRESS_SUCCESS")
 
     export const removeFlag = () => ({ type: REMOVE_FLAG })
-    export const fetchRoute = (address_1, address_2) => ({ type: FETCH_ROUTE, payload: { address_1, address_2 },
+    export const fetchRoute = (address1, address2) => ({ type: FETCH_ROUTE, payload: { address1, address2 },
     });
     export const setRoute = (route) => ({ type: SET_ROUTE, payload: { route } });
     export const deleteRoute = () => ({ type: DELETE_ROUTE });

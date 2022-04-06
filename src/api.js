@@ -25,5 +25,5 @@ export const getAddressRequest = () =>
 
 export const getRoute = (payload) => 
  fetch(
-    `https://loft-taxi.glitch.me/route?address_1=${payload.address_1}&address_2=${payload.address_2}`
+    `https://loft-taxi.glitch.me/route?address1=${payload.address1}&address2=${payload.address2}`
   ).then(res => res.json());

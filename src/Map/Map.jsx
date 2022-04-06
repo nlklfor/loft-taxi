@@ -5,7 +5,8 @@ import Header from "../Header/Header";
 import OrderForm from "./OrderForm";
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import { drawRoute } from "./drawRoute"
+import { drawRoute } from "./drawRoute";
+import "./Map.css";
 window.URL.createObjectURL = function () { };
 
 class Map extends Component {
@@ -18,7 +19,7 @@ class Map extends Component {
     mapboxgl.accessToken = 'pk.eyJ1IjoibmlraWZmZm9yIiwiYSI6ImNsMGpnN3R3NTBhY24zanF0cWE3ZGg5aWYifQ.eYhga-DmSziMUzLOp9AzwQ';
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v9',
+      style: 'mapbox://styles/mapbox/light-v10',
       center: [30.3056504, 59.9429126],
       zoom: 12,
     })
@@ -59,7 +60,7 @@ class Map extends Component {
           <OrderForm />
         ) : (<div></div>)}
         <section>
-          <div data-testid="map" className="map" ref={(el) => (this.mapContainer = el)} />
+          <div data-testid="map" className="map-container" ref={(el) => (this.mapContainer = el)} />
         </section>
         
       </>
