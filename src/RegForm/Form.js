@@ -12,8 +12,8 @@ export const RegistrationForm = () => {
   const { registrate, handleSubmit } = useForm()
   const dispatch = useDispatch()
   const onSubmit = (data) => {
-    const { email, name, password } = data
-    dispatch(register(email,password,name))
+    const { email, name, password, surname} = data
+    dispatch(register(email,password,name, surname))
   }
   return(
     <form onSubmit = {handleSubmit(onSubmit)} className='reg__form' >
@@ -23,8 +23,12 @@ export const RegistrationForm = () => {
             <input name = "email" type = "email" id = "email" placeholder='mail@mail.ru'></input>
         </label>
         <label htmlFor="name" className='name'> 
-            Как вас зовут?*
-            <input name = "name" type = "text" id = "name" placeholder='Пётр Александрович'></input>
+            Ваше имя*
+            <input name = "name" type = "text" id = "name" placeholder='Александрович'></input>
+        </label>
+        <label htmlFor="surname" className='surname'> 
+            Ваша Фамилия*
+            <input name = "surname" type = "text" id = "surname" placeholder='Александрович'></input>
         </label>
         <label htmlFor="password" className='password'>
             Пароль*
