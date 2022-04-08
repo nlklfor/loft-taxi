@@ -2,43 +2,42 @@
 import './App.css';
 import React from 'react';
 import {LogWithLog} from './LogForm/LogForm.jsx';
-import {ProfileWithLog} from './Profile';
-import Map from './Map';
+import {ProfileWithLog} from './Profile/Profile';
+import Map from "./Map/Map";
 import RegForm from './RegForm/RegForm.jsx';
-import Header from './Header/Header';
-import { withLog } from './Context';
+import {connect , useSelector} from 'react-redux';
+import {Routes, Route, Navigate} from 'react-router-dom';
 
-  const Pages = {
-     map: (props) => < Map {...props}/> ,
-     profile: (props) => <ProfileWithLog {...props}/> ,
-     logform: (props) => <LogWithLog {...props}/> ,
-     regform: (props) => <RegForm{...props} />,
-     header: (props) => <Header{...props} />
-    }
+
+
+
+const ProtectedPage = ({component}) => {
+  const isLoggedIn = useSelector(state => state.log.isLoggedIn)
+  
+  return isLoggedIn ? component : <Navigate to='/' />
+}
 
 class App extends React.Component {
-
-    state = { page: "logform"};
-
-    generatePage = (page) => {
-      if (this.props.isLoggedIn){
-        this.setState({page});
-      } else {
-        this.setState({ page :"logform"});
-      }
-    };
+  
   render(){
-    const {page} = this.state;
-    const Page = Pages[page];
-
+    
+    
     return(
       <>
         <div>
-            <Page generatePage = {this.generatePage}/>  
+          <Routes>
+            <Route exact path='/' element = {<LogWithLog/>} />
+            <Route path='/map' element ={<ProtectedPage component={<Map/>}/>}/>
+            <Route path='/profile' element ={<ProtectedPage component={<ProfileWithLog/>}/>}/>
+            <Route exact path='/registration' element = {<RegForm/>} />
+            <Route path='*' element = {<Navigate to='/map'/>} />
+          </Routes>
         </div>
       </>
     );
   }
 }
 
-export default withLog(App);
+export default connect(
+  state => ({isLoggedIn: state.log.isLoggedIn})
+)(App);
