@@ -2,7 +2,7 @@ import React from 'react';
 import AsideBar from '../AsideBar'
 import "./RegForm.css"
 import { connect } from "react-redux"
-import {Form} from "../LogForm/Form";
+import {RegistrationForm} from "../RegForm/Form";
 
 
 
@@ -17,13 +17,12 @@ class RegForm extends React.Component {
             <>
                 <section className='section__register'>
                     <AsideBar/>
-                    <Form/>
+                    <RegistrationForm/>
                 </section>
             </>
         );
     }
 }
 
-export default connect (
-    (state) => ({isLoggedIn: state.registrate.isLoggedIn, registrate: state.registrate})
-)(RegForm);
+
+export default RegForm;

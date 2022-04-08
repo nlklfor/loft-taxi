@@ -18,11 +18,11 @@ export const Form = () => {
             <h1 className='form__topic'>Войти</h1>
                 <label htmlFor="email" className='login'>
                     Email*
-                    <input  name = "email" type = "email" id = "email" placeholder='mail@mail.ru'/>
+                    <input name = "email" type = "email" id = "email" placeholder='mail@mail.ru'></input>
                 </label>
                 <label htmlFor="password" className='password'>
                     Password*
-                    <input  name = "password" type = "password" id = "password" placeholder='*******'/>
+                    <input  name = "password" type = "password" id = "password" placeholder='*******'></input>
                 </label>
                 <button type = "submit" className = "btn__enter">Войти</button>
                 <div className='new__user'>
