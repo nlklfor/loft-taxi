@@ -2,8 +2,7 @@ import './LogForm.css'
 import React from 'react';
 import AsideBar from '../AsideBar'
 import {connect} from 'react-redux';
-import {authenticate} from '../actions'
-
+import {Form} from "./Form"
 import {Navigate, Link} from 'react-router-dom';
 
 
@@ -11,16 +10,6 @@ import {Navigate, Link} from 'react-router-dom';
 class LogForm extends React.Component {
     
 
-
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-        const {email , password} = event.target
-        this.props.authenticate(email.value , password.value)
-        
-
-    };
     render(){
         return(
             <>
@@ -29,26 +18,9 @@ class LogForm extends React.Component {
                         <Navigate to='/map'/>
                         
                     ) : (
-                        <section className='section__login'> 
-                <AsideBar />
-                    <form onSubmit = {this.handleSubmit} className = "log__form" >
-                        <h1 className='form__topic'>Войти</h1>
-                            <label htmlFor="email" className='login'>
-                                Email*
-                                <input name = "email" type = "email" id = "email" placeholder='mail@mail.ru'></input>
-                            </label>
-                            <label htmlFor="password" className='password'>
-                                Password*
-                                <input name = "password" type = "password" id = "password" placeholder='*******'></input>
-                            </label>
-                            <button type = "submit" className = "btn__enter">Войти</button>
-                            <div className='new__user'>
-                                <p className='user__qstn'>Новый пользователь?</p>
-                                    <p className='lnk__register'> 
-                                        <Link to='/registration' id = "reg__link">Зарегестрируйтесь</Link>
-                                    </p>
-                            </div> 
-                    </form>
+                <section className='section__login'> 
+                    <AsideBar />
+                    <Form/>
                 </section>
                     )
                 }
@@ -59,5 +31,4 @@ class LogForm extends React.Component {
 
 export const LogWithLog = connect(
     (state) => ({isLoggedIn: state.log.isLoggedIn}),
-    {authenticate}
 )(LogForm);
