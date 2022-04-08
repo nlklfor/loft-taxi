@@ -116,6 +116,7 @@
 
 .order__success{
     display: flex;
+    position: absolute;
     flex-direction: column;
     top: 101px;
     bottom: 0;
@@ -154,7 +155,7 @@
     font-weight: 400;
     font-size: 18px;
     color: #000000;
-    margin-left: 40px;
+    margin-left: 120px;
     margin-right: 40px;
 }
 .finish__order:hover , .finish__order:active, .finish__order:focus{

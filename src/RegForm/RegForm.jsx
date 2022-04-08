@@ -1,7 +1,6 @@
 import React from 'react';
 import AsideBar from '../AsideBar'
 import "./RegForm.css"
-import { connect } from "react-redux"
 import {RegistrationForm} from "../RegForm/Form";
 
 

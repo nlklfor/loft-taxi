@@ -3,12 +3,12 @@ import { logSaga } from "./logSaga";
 import { cardSaga } from "./paymentSaga";
 import { addressListSaga} from "./addressSaga";
 import { TheRoutesSaga } from "./routeSaga";
-import { regSaga } from "./regSaga";
+import { registrationSaga } from "./regSaga";
 
 export function* rootSaga() {
     yield fork(logSaga);
     yield fork(cardSaga);
     yield fork(addressListSaga);
     yield fork(TheRoutesSaga);
-    yield fork(regSaga);
+    yield fork(registrationSaga);
 }

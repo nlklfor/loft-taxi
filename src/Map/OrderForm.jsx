@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { getAddressList } from "../address/selectors";
 import { useSelector } from "react-redux";
 import "./OrderForm.css";
+import { Link, Navigate } from "react-router-dom";
 
 
 
@@ -109,7 +110,8 @@ const OrderForm = React.memo(props => {
         <Paper className="order__success">
           <h1 className="order__info-success">Заказ размещен</h1>
             <p className="order__desc-success">Ваше такси уже едет к вам. Прибудет приблизительно через 10 минут.</p>
-          <button variant="contained" color="primary" type="submit" className="finish__order">Сделать новый заказ</button>
+            <Navigate to="/map"/>
+          <Link to ="/map"><button type="submit" className="finish__order">Сделать новый заказ</button></Link>
         </Paper>
       )}
     </>

@@ -14,7 +14,7 @@ export const SET_ROUTE = 'SET_ROUTE';
 export const DELETE_ROUTE = 'REMOVE_ROUTE';
 
 
-export const logIn = () => ({type: LOG_IN})
+export const logIn = (token) => ({type: LOG_IN, payload: token})
 export const logOut = () => ({type: LOG_OUT})
 export const register = (email ,password, name, surname) => ({
     type : REGISTER ,

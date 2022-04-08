@@ -56,10 +56,12 @@ class Map extends Component {
     return (
       <>
         <Header generatePage = {this.props.generatePage} />
-        <div data-testid="map" className="map-container" ref={(el) => (this.mapContainer = el)} />
         {!this.props.cardAdded ? (
           <OrderForm />
-        ) : (<div>Карту заполни!</div>)}
+        ) : (<div></div>)}
+        <section>
+          <div data-testid="map" className="map-container" ref={(el) => (this.mapContainer = el)} />
+        </section>
         
       </>
     );
