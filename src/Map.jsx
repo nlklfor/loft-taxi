@@ -21,8 +21,8 @@ const Map = (props) => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [lng, lat],
-      zoom: zoom
+      center: [30.305604, 59.9429126],
+      zoom: 12
     });
 
     
@@ -47,3 +47,6 @@ const Map = (props) => {
   );
 };
 export default Map;
+
+
+

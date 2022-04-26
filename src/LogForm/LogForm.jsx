@@ -1,13 +1,15 @@
 import './LogForm.css'
 import React from 'react';
 import AsideBar from '../AsideBar'
-import { withLog } from '../Context';
+import {connect} from 'react-redux';
+import {authenticate} from '../actions'
+
+import {Navigate, Link} from 'react-router-dom';
+
 
 
 class LogForm extends React.Component {
-    goToProfile = () => {
-        this.props.generatePage("profile")
-    }
+    
 
 
 
@@ -15,7 +17,7 @@ class LogForm extends React.Component {
         event.preventDefault();
 
         const {email , password} = event.target
-        this.props.logIn(email.value , password.value)
+        this.props.authenticate(email.value , password.value)
         
 
     };
@@ -24,9 +26,7 @@ class LogForm extends React.Component {
             <>
                 {
                     this.props.isLoggedIn ? (
-                        <h1>
-                            Вы успешно вошли <button onClick = {this.goToProfile}>Go to profile</button>
-                        </h1>
+                        <Navigate to='/map'/>
                         
                     ) : (
                         <section className='section__login'> 
@@ -41,12 +41,12 @@ class LogForm extends React.Component {
                                 Password*
                                 <input name = "password" type = "password" id = "password" placeholder='*******'></input>
                             </label>
-                            <button type = "submit" onClick = {() =>{ this.props.generatePage("map")} } className = "btn__enter">Войти</button>
+                            <button type = "submit" className = "btn__enter">Войти</button>
                             <div className='new__user'>
                                 <p className='user__qstn'>Новый пользователь?</p>
-                                <p className='lnk__register' onClick = {() =>{ this.props.generatePage("regform")} }> 
-                                    Зарегестрируйтесь
-                                </p>
+                                    <p className='lnk__register'> 
+                                        <Link to='/registration' id = "reg__link">Зарегестрируйтесь</Link>
+                                    </p>
                             </div> 
                     </form>
                 </section>
@@ -57,4 +57,7 @@ class LogForm extends React.Component {
     }
 }
 
-export const LogWithLog = withLog(LogForm);
+export const LogWithLog = connect(
+    (state) => ({isLoggedIn: state.log.isLoggedIn}),
+    {authenticate}
+)(LogForm);

@@ -35,3 +35,15 @@
 .nav__list-item:hover{
     color: #FDBF5A;
 }
+
+#header__item{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 21px;
+    transition: .2s all;
+    padding-left: 20px;
+    text-decoration: none;
+}
+#header__item:hover , #header__item:focus , #header__item:active {
+    color: #FDBF5A;
+}
